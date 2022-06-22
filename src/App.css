@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+/* my additions here: */
+
+ul {
+  list-style-type: none;
+}
