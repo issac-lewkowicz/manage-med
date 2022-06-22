@@ -1,17 +1,17 @@
 //import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 
 import Header from "./Header";
-//import NavBar from "./NavBar";
+import Navbar from "./Navbar";
 
 function App() {
-  return (
-    <div className="App">
-      <Header className="App-header"  />
-      {/* <NavBar />
-      <Switch>
+	return (
+		<div className="App">
+			<Header className="App-header" />
+			<Navbar />
+      {/* <Switch>
         <Route exact path="/">
           <Component1 />
         </Route>
@@ -24,8 +24,8 @@ function App() {
         <Component3 />
         </Route>
       </Switch> */}
-    </div>
-  );
+		</div>
+	);
 }
 
 export default App;
