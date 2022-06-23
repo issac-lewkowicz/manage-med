@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
 
 function Appointment({appoint}) {
-  console.log("from Appointment: ", appoint)
   const { date_time, appointment_type, patient_id, doctor_id, id} = appoint;
 const [patient, setPatient] = useState(null);
 const [isLoaded, setIsLoaded] = useState(false);
@@ -13,14 +12,14 @@ const [isLoaded, setIsLoaded] = useState(false);
         setPatient(res);
         setIsLoaded(true);
       });
-  }, []);
+  }, [patient_id]);
 
-  // if (!isLoaded) return <h1>Loading...</h1>;
-console.log(patient)
+  if (!isLoaded) return <h1>Loading...</h1>;
+  
 	return <div>
     <p>{date_time} <br/>
     Appointment type: {appointment_type} <br/>
-    {patient}
+    Patient: {patient.name}
     </p>
   </div>;
 }

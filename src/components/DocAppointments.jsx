@@ -17,9 +17,9 @@ function DocAppointments() {
   }, [id]);
 
   if (!isLoaded) return <h1>Loading...</h1>;
-  const docApps = apps.filter((appoint ) => appoint.id ? appoint : null)
-  const appointments = docApps.map(appoint => <Appointment key={appoint.id} appoint={appoint}/>) 
-  // const appointments = apps.map(appoint => <Appointment key={appoint.id} appoint={appoint}/>) 
+
+  const appointments = apps.map(appoint => <Appointment key={appoint.id} appoint={appoint}/>) 
+  
   return (
     <div>{appointments}</div>
   )

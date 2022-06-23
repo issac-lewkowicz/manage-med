@@ -21,7 +21,7 @@ function DoctorCard({ doc }) {
 			<CardContent>
 				<NavLink
 					id="dr__header"
-					to="/doc-appointments/:id"
+					to={`/doc-appointments/${id}`}
 					style={{ color: "inherit", textDecoration: "inherit" }}
 				>
 					<h2>{"Dr. " + name}</h2>
