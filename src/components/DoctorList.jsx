@@ -1,13 +1,14 @@
 import React from 'react'
 import DoctorCard from "./DoctorCard";
+import { Stack } from "@mui/material";
 
 function DoctorList( {docList} ) {
   const docs = docList.map( doc => <DoctorCard  key={doc.id} doc={doc}/>)
   return (
     <div>
-    <ul>
+    <Stack spacing={2} margin={0}>
       {docs}
-    </ul>  
+    </Stack>  
     </div>
   )
 }
