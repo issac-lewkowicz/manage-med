@@ -17,9 +17,9 @@ function DocAppointments() {
   }, [id]);
 
   if (!isLoaded) return <h1>Loading...</h1>;
+  if (apps.length === 0) return "No Appointments Scheduled";
 
   const appointments = apps.map(appoint => <Appointment key={appoint.id} appoint={appoint}/>) 
-  
   return (
     <div>{appointments}</div>
   )
