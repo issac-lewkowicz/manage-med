@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
-import {TextField, Select, InputLabel, MenuItem, Container, Modal } from "@mui/material";
+import {TextField, Select, InputLabel, MenuItem, Container } from "@mui/material";
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
@@ -17,7 +17,6 @@ function NewAppointment() {
 	};
 
 	const [formData, setFormData] = useState(defaultFormData);
-  const [value, setValue] = useState(new Date());
 
 	const updateFormData = (e) => {
 		const { name, value } = e.target;

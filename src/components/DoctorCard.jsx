@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import ToggleButton from "@mui/material/ToggleButton";
 import InfoIcon from "@mui/icons-material/Info";
+import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 
 function DoctorCard({ doc }) {

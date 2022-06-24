@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Appointment from "./Appointment";
+import { Stack } from "@mui/material";
 
 function DocAppointments({docList}) {
   const [apps, setApps] = useState([]);
@@ -48,11 +49,11 @@ const handleUpdateApp = (newApp) => {
   
   // let currentDoc = newDocList.find(doc => doc.id === id);
   // console.log("currnet Doc: ", currentDoc);
-  const appointments = apps.map(appoint => <Appointment key={appoint.id} appoint={appoint} onDelete={onDelete} />); 
+  const appointments = apps.map(appoint => <Appointment key={appoint.id} appoint={appoint} onDelete={onDelete} handleUpdateApp={handleUpdateApp}/>); 
   return (
     <>
     {/* <h2>{currentDoc.name}</h2> */}
-    <div>{appointments}</div>
+    <Stack spacing={2}>{appointments}</Stack>
     </>
   )
 }
