@@ -12,7 +12,7 @@ function DocAppointments({docList}) {
 
 
   useEffect(() => {
-    fetch(`http://localhost:9292/appointments/${id}`)
+    fetch(`http://localhost:9292/doctors/${id}`)
       .then((res) => res.json())
       .then((appoints) => {
         setApps(appoints);

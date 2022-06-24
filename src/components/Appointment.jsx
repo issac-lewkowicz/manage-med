@@ -4,8 +4,9 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import DeleteIcon from "@mui/icons-material/Delete";
 import UpdateIcon from "@mui/icons-material/Update";
+import { NavLink } from "react-router-dom";
 
-function Appointment({ appoint, onDelete, handleUpdateApp }) {
+function Appointment({ appoint, onDelete }) {
 	const {
 		date_time,
 		appointment_type,
@@ -40,11 +41,16 @@ function Appointment({ appoint, onDelete, handleUpdateApp }) {
 				</p>
 				<br />
 				<Button
-					onClick={() => handleUpdateApp(id)}
 					variant="outlined"
 					startIcon={<UpdateIcon />}
 				>
-					Update Appointment
+          <NavLink
+						to={`/update-appointment/${id}`}
+						style={{ color: "inherit", textDecoration: "inherit" }}
+					>
+						<h4>Update Appointment</h4>
+					</NavLink>
+					
 				</Button>
 				<Button
 					onClick={() => onDelete(id)}

@@ -21,7 +21,6 @@ function NewAppointment() {
 	const updateFormData = (e) => {
 		const { name, value } = e.target;
 		setFormData({ ...formData, [name]: value });
-    console.log(formData);
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();

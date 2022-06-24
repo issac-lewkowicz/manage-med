@@ -9,6 +9,7 @@ import DoctorList from "./DoctorList";
 import DocPatients from "./DocPatients";
 import DocAppointments from "./DocAppointments";
 import NewAppointment from "./NewAppointment";
+import UpdateAppointment from "./UpdateAppointment";
 
 function App() {
 	const [docList, setDocList] = useState([]);
@@ -34,6 +35,9 @@ function App() {
 
 				<Route path="/new-appointment/:id">
 					<NewAppointment />
+				</Route>
+				<Route path="/update-appointment/:id">
+					<UpdateAppointment />
 				</Route>
 			</Switch>
 		</div>

@@ -14,39 +14,45 @@ import { useParams } from "react-router-dom";
 
 function UpdateAppointment() {
 	let { id } = useParams();
-	// const [isLoaded, setIsLoaded] = useState(false);
+	const [isLoaded, setIsLoaded] = useState(false);
   const [app, setApp] = useState({});
 	useEffect(() => {
 		fetch(`http://localhost:9292/appointments/${id}`)
 			.then((res) => res.json())
 			.then((appoint) => {
         setApp(appoint)
-				// setIsLoaded(true);
+        setFormData({
+          appointment_type: appoint.appointment_type,
+          date_time: appoint.date_time,
+          patient_id: appoint.patient.id,
+          patient_name: appoint.patient.name,
+          doctor_id: appoint.doctor_id})
+				setIsLoaded(true);
 			});
 	}, [id]);
 
-  const [patient, setPatient] = useState(null);
+  // const [patient, setPatient] = useState(null);
 
-	useEffect(() => {
-		fetch(`http://localhost:9292/patients/${patient_id}`)
-			.then((resp) => resp.json())
-			.then((res) => {
-				setPatient(res);
-				// setIsLoaded(true);
-			});
-	}, [app.patient_id]);
+	// useEffect(() => {
+	// 	fetch(`http://localhost:9292/patients/${app.patient_id}`)
+	// 		.then((resp) => resp.json())
+	// 		.then((res) => {
+	// 			setPatient(res);
+	// 			// setIsLoaded(true);
+	// 		});
+	// }, [app.patient_id]);
 
-	// if (!isLoaded) return <h1>Loading...</h1>;
-
-	const defaultFormData = {
-		appointment_type: app.appointment_type,
-		date_time: app.date_time,
-		patient_name: patient.name,
-		doctor_id: app.doctor_id,
+  let defaultFormData = {
+    appointment_type: "",
+		date_time: "",
+		patient_name: "",
+		doctor_id: "",
+    patient_id: ""
 	};
+  const [formData, setFormData] = useState(defaultFormData);
 
-	const [formData, setFormData] = useState(defaultFormData);
-
+	if (!isLoaded) return <h1>Loading...</h1>;
+  
 	const updateFormData = (e) => {
 		const { name, value } = e.target;
 		setFormData({ ...formData, [name]: value });
@@ -68,11 +74,10 @@ function UpdateAppointment() {
 		fetch(`http://localhost:9292/appointments/${id}`, patchConfig)
 			.then((res) => res.json())
 			.then((newItem) => {
-				setFormData(defaultFormData);
+        console.log(newItem)
 			});
 	};
 
-	
 	return (
 		<Container>
 			<h2>UpdateAppointment</h2>
