@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 
 function Navbar() {
 	return (
-		<div>
-      <h2>Navbar here!</h2>
+		<div id="navbar">
+      <h2>SearchBar here!</h2>
 			{/* <TextField
         size="small"
         className="Header_Content"
