@@ -29,7 +29,7 @@ function DoctorCard({ doc }) {
 				<p>{specialty}</p>
 				<Button variant="contained">
 					<NavLink
-						to="/form"
+						to={`/new-appointment/${id}`}
 						style={{ color: "inherit", textDecoration: "inherit" }}
 					>
 						<h4>New Appointment</h4>
