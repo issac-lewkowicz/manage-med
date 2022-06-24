@@ -6,9 +6,8 @@ import { Stack } from "@mui/material";
 function DocAppointments({docList}) {
   const [apps, setApps] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-  // const [newDocList, setNewDocList] = useState([])
   let { id } = useParams();
-  // console.log("param id: ", id)
+
 
 
   useEffect(() => {
@@ -16,15 +15,10 @@ function DocAppointments({docList}) {
       .then((res) => res.json())
       .then((appoints) => {
         setApps(appoints);
-        // setNewDocList(docList)
         setIsLoaded(true);
       });
   }, [id]);
 
-  // const handleNewAppointment = (newAppointment) => {
-  //   const updatedAppList = [...apps, newAppointment];
-  //   setApps(updatedAppList)
-  //   }
 
   const handleDelete = (id) => {
     const newAppList = apps.filter((app) => app.id !== id);
@@ -46,9 +40,6 @@ const handleUpdateApp = (newApp) => {
   if (!isLoaded) return <h1>Loading...</h1>;
   if (apps.length === 0) return "No Appointments Scheduled";
 
-  
-  // let currentDoc = newDocList.find(doc => doc.id === id);
-  // console.log("currnet Doc: ", currentDoc);
   const appointments = apps.map(appoint => <Appointment key={appoint.id} appoint={appoint} onDelete={onDelete} handleUpdateApp={handleUpdateApp}/>); 
   return (
     <>
