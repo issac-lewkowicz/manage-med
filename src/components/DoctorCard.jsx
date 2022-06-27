@@ -19,6 +19,7 @@ function DoctorCard({ doc }) {
 	return (
 		<Card>
 			<CardContent>
+        <Button >
 				<NavLink
 					id="dr__header"
 					to={`/doc-appointments/${id}`}
@@ -26,6 +27,7 @@ function DoctorCard({ doc }) {
 				>
 					<h2>{"Dr. " + name}</h2>
 				</NavLink>
+        </Button>
 				<p>{specialty}</p>
 				<Button variant="contained">
 					<NavLink

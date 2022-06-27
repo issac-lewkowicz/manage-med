@@ -116,7 +116,7 @@ function UpdateAppointment() {
 					<MenuItem value="phone">phone</MenuItem>
 					<MenuItem value="	in-person"> in-person</MenuItem>
 				</Select>
-
+          <br/>
 				<Button varient="contained" type="submit">
 					Update Appointment{" "}
 				</Button>
