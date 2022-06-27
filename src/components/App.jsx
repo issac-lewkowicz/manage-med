@@ -23,9 +23,9 @@ function App() {
 	return (
 		<div className="App">
 			<Header />
+			<Navbar />
 			<Switch>
 				<Route exact path="/">
-			    <Navbar />
 					<DoctorList docList={docList} />
 				</Route>
 

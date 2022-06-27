@@ -81,7 +81,7 @@ function NewAppointment() {
 					<MenuItem value="phone">phone</MenuItem>
 					<MenuItem value="	in-person"> in-person</MenuItem>
 				</Select>
-
+        <br/>
 				<Button varient="contained" type="submit">
 					Add Appointment{" "}
 				</Button>
