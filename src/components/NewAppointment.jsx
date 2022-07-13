@@ -82,7 +82,7 @@ function NewAppointment() {
 					<MenuItem value="	in-person"> in-person</MenuItem>
 				</Select>
         <br/>
-				<Button varient="contained" type="submit">
+				<Button variant="contained" type="submit">
 					Add Appointment{" "}
 				</Button>
 			</form>
