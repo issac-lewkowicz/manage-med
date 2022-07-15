@@ -27,7 +27,7 @@ function UpdateAppointment() {
           patient_id: appoint.patient.id,
           patient_name: appoint.patient.name,
           doctor_id: appoint.doctor_id})
-				setIsLoaded(true);
+				setIsLoaded(true);    
 			});
 	}, [id]);
 

@@ -33,7 +33,7 @@ function App() {
 					<DocAppointments docList={docList}/>
 				</Route>
 
-				<Route path="/new-appointment/:id">
+				<Route path="/new-appointment/">
 					<NewAppointment />
 				</Route>
 				<Route path="/update-appointment/:id">
